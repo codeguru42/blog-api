@@ -49,6 +49,7 @@
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.15.5, rbenv: 2.7.3, blog-api) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.0.0, rbenv: 2.7.3, blog-api) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.9.1, rbenv: 2.7.3, blog-api) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jsonapi-resources (v0.10.5, rbenv: 2.7.3, blog-api) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.7.1, rbenv: 2.7.3, blog-api) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.13.0, rbenv: 2.7.3, blog-api) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, rbenv: 2.7.3, blog-api) [gem]" level="application" />
@@ -97,6 +98,8 @@
         <option value="generator" />
         <option value="integration_test" />
         <option value="job" />
+        <option value="jsonapi:controller" />
+        <option value="jsonapi:resource" />
         <option value="mailbox" />
         <option value="mailer" />
         <option value="migration" />
@@ -133,6 +136,8 @@
         <option value="generator" />
         <option value="integration_test" />
         <option value="job" />
+        <option value="jsonapi:controller" />
+        <option value="jsonapi:resource" />
         <option value="mailbox" />
         <option value="mailer" />
         <option value="migration" />
@@ -316,6 +321,15 @@
                 </subtasks>
               </RakeTaskImpl>
               <RakeTaskImpl description="" fullCommand="db:truncate_all" id="truncate_all" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="jsonapi">
+            <subtasks>
+              <RakeTaskImpl id="resources">
+                <subtasks>
+                  <RakeTaskImpl description="Checks application for orphaned overrides" fullCommand="jsonapi:resources:check_upgrade" id="check_upgrade" />
+                </subtasks>
+              </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="log">
