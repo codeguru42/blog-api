@@ -2,6 +2,10 @@ GET http://localhost:3000/articles/
 
 ###
 
+GET http://localhost:3000/articles/?include=comments
+
+###
+
 GET http://localhost:3000/articles/
 
 ###
