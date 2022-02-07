@@ -40,3 +40,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "jsonapi-resources", "0.11.0.beta1", git: "https://github.com/cerebris/jsonapi-resources"
+
+group :test do
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker", "~> 2.19"
+  gem "rspec", "~> 3.10"
+  gem "rspec-rails", "~> 5.1"
+end
