@@ -16,4 +16,11 @@ describe 'ArticlesController' do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  context 'when requesting latest_article' do
+    it 'succeeds' do
+      get latest_articles_path
+      expect(response).to have_http_status(:ok)
+    end
+  end
 end
