@@ -1,6 +1,6 @@
 class ArticlesController < JSONAPI::ResourceController
   def latest
     serializer = JSONAPI::ResourceSerializer.new(ArticleResource)
-    serializer.serialize_to_hash(Article.latest)
+    render json: serializer.serialize_to_hash(ArticleResource.new(Article.latest, {}))
   end
 end
